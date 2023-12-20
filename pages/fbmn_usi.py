@@ -18,7 +18,7 @@ except:
 networking_nodes_df = workflow_fbmn.get_clustersummary_dataframe(gnps2_task)
 networking_nodes_df["usi"] = networking_nodes_df.apply(lambda x: "mzspec:GNPS2:TASK-{}-{}:scan:{}".format(gnps2_task, "nf_output/clustering/specs_ms.mgf", x["cluster index"]), axis=1)
 
-networking_nodes_df = networking_nodes_df[["usi", "cluster index", "parent mass", "number of spectra", "component"]]
+networking_nodes_df = networking_nodes_df[["usi", "cluster index", "parent mass", "component"]]
 
 st.write(networking_nodes_df)
 
