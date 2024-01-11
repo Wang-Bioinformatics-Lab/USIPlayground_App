@@ -38,6 +38,6 @@ for dataset_accession in datasets:
 
 # Creating a df
 import pandas as pd
-df = pd.DataFrame(usi_dict)
+df = pd.DataFrame(all_usis)
 
 st.write(df)
