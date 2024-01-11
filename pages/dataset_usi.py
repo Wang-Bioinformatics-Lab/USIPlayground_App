@@ -9,7 +9,7 @@ st.set_page_config(
 # Enter all the datasets accessions in textarea
 st.write("Enter all the datasets")
 
-dataset_strings = st.textarea("Enter all the datasets with new lines", "MSV000086450")
+dataset_strings = st.text_area("Enter all the datasets with new lines", "MSV000086450")
 
 datasets = usis_string.split("\n")
 
