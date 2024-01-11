@@ -20,18 +20,21 @@ for dataset_accession in datasets:
 
     st.write(all_files_url)
 
-    all_files = requests.get(all_files_url).json()
+    try:
+        all_files = requests.get(all_files_url).json()
 
-    for file in all_files:
-        filename = file["filename"]
+        for file in all_files:
+            filename = file["filename"]
 
-        usi = "mzspec:{}:{}".format(dataset_accession, filename)
+            usi = "mzspec:{}:{}".format(dataset_accession, filename)
 
-        usi_dict = {}
-        usi_dict["usi"] = usi
-        usi_dict["dataset"] = dataset_accession
+            usi_dict = {}
+            usi_dict["usi"] = usi
+            usi_dict["dataset"] = dataset_accession
 
-        all_usis.append(usi_dict)
+            all_usis.append(usi_dict)
+    except:
+        continue
 
 # Creating a df
 import pandas as pd
