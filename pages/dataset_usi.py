@@ -11,7 +11,7 @@ st.write("Enter all the datasets")
 
 dataset_strings = st.text_area("Enter all the datasets with new lines", "MSV000086450")
 
-datasets = usis_string.split("\n")
+datasets = dataset_strings.split("\n")
 
 # Getting all the USIs
 all_usis = []
