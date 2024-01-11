@@ -17,6 +17,9 @@ datasets = dataset_strings.split("\n")
 all_usis = []
 for dataset_accession in datasets:
     all_files_url = "https://explorer.gnps2.org/api/datasets/{}/files".format(dataset_accession)
+
+    st.write(all_files_url)
+
     all_files = requests.get(all_files_url).json()
 
     for file in all_files:
