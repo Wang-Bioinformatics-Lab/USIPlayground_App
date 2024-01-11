@@ -27,10 +27,14 @@ for dataset_accession in datasets:
 
         usi = "mzspec:{}:{}".format(dataset_accession, filename)
 
-        all_usis.append(usi)
+        usi_dict = {}
+        usi_dict["usi"] = usi
+        usi_dict["dataset"] = dataset_accession
+
+        all_usis.append(usi_dict)
 
 # Creating a df
 import pandas as pd
-df = pd.DataFrame(all_usis, columns=["usi"])
+df = pd.DataFrame(usi_dict)
 
 st.write(df)
