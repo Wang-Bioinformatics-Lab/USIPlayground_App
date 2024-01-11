@@ -34,9 +34,3 @@ import pandas as pd
 df = pd.DataFrame(all_usis, columns=["usi"])
 
 st.write(df)
-
-
-
-
-
-
